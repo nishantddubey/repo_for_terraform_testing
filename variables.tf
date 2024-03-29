@@ -4,15 +4,34 @@ variable "vpc_name" {
   default = "myvpc"
 }
 
+variable "public_subnet_name" {
+  description = "The name of public subnet"
+  default = "public-subnet"
+}
+
+variable "private_subnet_name" {
+  description = "The name of public subnet"
+  default = "private-subnet"
+}
+variable "internet_gateway_name" {
+  description = "The name of internet Gateway"
+  default = "my-igw"
+}
+variable "route_table_name" {
+  description = "The name of Route table"
+  default = "public-route-table"
+}
+
+
 #variables used to create instance
 variable "aws_region" {
   description = "The AWS region where resources will be created"
-  default = "ap-south-1"
+  default = "ap-south-1" #default is mumbai region
 }
 
 variable "ami_id" {
   description = "The ID of the AMI to use for EC2 instances"
-  default = "ami-007020fd9c84e18c7"
+  default = "ami-007020fd9c84e18c7" #ubuntu image of mumbai region
 }
 
 variable "instance_type" {
@@ -58,8 +77,3 @@ variable "security_group_tags" {
   }
 }
 
-# variable "ports" {
-#   description = "All ports that you want to allow"
-#   type        = list(number)
-
-# }

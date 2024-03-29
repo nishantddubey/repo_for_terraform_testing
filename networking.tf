@@ -12,7 +12,7 @@ resource "aws_subnet" "public_subnet" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "public-subnet"
+    Name = var.public_subnet_name
   }
 }
 
@@ -21,7 +21,7 @@ resource "aws_subnet" "private_subnet" {
   cidr_block = "10.0.2.0/24"
 
   tags = {
-    Name = "private-subnet"
+    Name = var.private_subnet_name
   }
 }
 
@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "my_igw" {
   vpc_id = aws_vpc.my_vpc.id
 
   tags = {
-    Name = "my-igw"
+    Name = var.internet_gateway_name
   }
 }
 
@@ -42,7 +42,7 @@ resource "aws_route_table" "public_route_table" {
   }
 
   tags = {
-    Name = "public-route-table"
+    Name = var.route_table_name
   }
 }
 
