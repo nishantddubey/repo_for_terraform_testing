@@ -1,3 +1,22 @@
+# Credientials of AWS 
+variable "aws_access_key" {
+  description = "AWS access key"
+  type        = string
+  default     = ""
+}
+
+variable "aws_secret_key" {
+  description = "AWS secret key"
+  type        = string
+  default     = ""
+}
+
+variable "aws_region" {
+  description = "The AWS region where resources will be created"
+  default = "ap-south-1" #default is mumbai region
+}
+
+
 #variables used to create vpc
 variable "vpc_name" {
   description = "The name of your VPC"
@@ -24,11 +43,6 @@ variable "route_table_name" {
 
 
 #variables used to create instance
-variable "aws_region" {
-  description = "The AWS region where resources will be created"
-  default = "ap-south-1" #default is mumbai region
-}
-
 variable "ami_id" {
   description = "The ID of the AMI to use for EC2 instances"
   default = "ami-007020fd9c84e18c7" #ubuntu image of mumbai region
